@@ -313,13 +313,11 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text("❌ Сначала отправьте фото!")
         return
 
-    # Показать процесс обработки
     await query.edit_message_text("⏳ Анализирую изображение...")
 
     result_text = ""
 
     try:
-        # Выбор модели
         if query.data == 'model_hog_svm':
             if 'hog_svm' not in model_manager.models:
                 result_text = "❌ HOG + SVM модель не загружена!"
@@ -416,17 +414,6 @@ def main():
     """Запуск бота"""
 
     TOKEN = "не наш токен"
-
-    if TOKEN == "не наш токен":
-        print("=" * 50)
-        print("ОШИБКА: Не указан токен бота!")
-        print("=" * 50)
-        print("1. Откройте @BotFather в Telegram")
-        print("2. Создайте бота командой /newbot")
-        print("3. Скопируйте токен")
-        print("4. Вставьте токен в переменную TOKEN в этом файле")
-        print("=" * 50)
-        return
 
     # Проверка наличия хотя бы одной модели
     if not model_manager.models:
