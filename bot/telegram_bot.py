@@ -415,7 +415,6 @@ def format_all_results(results):
 def main():
     """Запуск бота"""
 
-    # ВАЖНО: Замените на ваш токен от @BotFather
     TOKEN = "не наш токен"
 
     if TOKEN == "не наш токен":
